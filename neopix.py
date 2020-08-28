@@ -11,4 +11,4 @@ green = sys.argv[2]
 blue = sys.argv[3]
 
 for x in range(0, config.LED_COUNT):
-    pixels[x] = (red, green, blue)
+    pixels[x] = (int(red), int(green), int(blue))

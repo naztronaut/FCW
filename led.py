@@ -11,6 +11,6 @@ def led():
     green = request.args.get('green')
     blue = request.args.get('blue')
     print(red, green, blue)
-    resp = ls.update_led(int(red), int(green), int(blue))
+    resp = ls.update_led(red, green, blue)
     return jsonify({"message": resp})
 
