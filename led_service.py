@@ -19,7 +19,7 @@ def update_led(red, green, blue):
 
 
 def start_visualization():
-    os.popen('sudo nohup sudo python3 p7.py >> /dev/null 2>&1 &')
+    os.popen('sudo nohup sudo python3 led_watchdog.py >> /dev/null 2>&1 &')
 
 
 def stop_visualization():

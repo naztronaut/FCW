@@ -12,9 +12,9 @@ def led():
     blue = request.args.get('blue')
     if ls.check_visualization_status() is False:
         ls.start_visualization()
+    resp = ls.update_led(red, green, blue)
     if red == '0' and green == '0' and blue == '0':
         ls.stop_visualization()
-    resp = ls.update_led(red, green, blue)
     return jsonify({"message": resp})
 
 
