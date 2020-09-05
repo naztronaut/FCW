@@ -10,6 +10,17 @@ import os
 
 
 def update_led(red, green, blue):
-    os.popen('sudo python3 ' + os.path.dirname(os.path.realpath(__file__)) + '/neopix.py  ' + red + ' ' + green + ' ' + blue)
+    # os.popen('sudo python3 ' + os.path.dirname(os.path.realpath(__file__)) + '/neopix.py  ' + red + ' ' + green + ' ' + blue)
+    with open("./file/status.txt", "w") as f:
+        f.write(red + "," + green + "," + blue)
+    # os.popen('sudo python3 ' + os.path.dirname(os.path.realpath(__file__)) + '/neopix.py  ' + red + ' ' + green + ' ' + blue)
     # for x in range(0, config.LED_COUNT):
     #     pixels[x] = (red, green, blue)
+
+
+def start_visualization():
+    os.popen('sudo nohup sudo python3 p7.py >> /dev/null 2>&1 &')
+
+
+def check_visualization_status():
+    return os.popen('ps aux | grep led_watchdog.py')
