@@ -28,7 +28,7 @@ def stop_visualization():
 
 def check_visualization_status():
     resp = os.popen('ps aux | grep led_watchdog.py')
-    if "sudo python3 led_watchdog.py" in resp.read():
+    if "sudo nohup python3 /var/www/html/fcw/led_watchdog.py" in resp.read():
         return True
     else:
         return False
