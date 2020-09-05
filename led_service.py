@@ -23,4 +23,5 @@ def start_visualization():
 
 
 def check_visualization_status():
-    return os.popen('ps aux | grep led_watchdog.py')
+    resp = os.popen('ps aux | grep led_watchdog.py')
+    return resp.read()
