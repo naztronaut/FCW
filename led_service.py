@@ -11,7 +11,7 @@ import os
 
 def update_led(red, green, blue):
     # os.popen('sudo python3 ' + os.path.dirname(os.path.realpath(__file__)) + '/neopix.py  ' + red + ' ' + green + ' ' + blue)
-    with open("./file/status.txt", "w") as f:
+    with open("/var/www/html/fcw/file/status.txt", "w") as f:
         f.write(red + "," + green + "," + blue)
     # os.popen('sudo python3 ' + os.path.dirname(os.path.realpath(__file__)) + '/neopix.py  ' + red + ' ' + green + ' ' + blue)
     # for x in range(0, config.LED_COUNT):
