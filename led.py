@@ -17,4 +17,4 @@ def led():
 
 @app.route('/check_vis_status', methods=['GET'])
 def check_vis_status():
-    return jsonify({"message": ls.check_visualization_status()})
+    return jsonify({"message": str(ls.check_visualization_status())})
