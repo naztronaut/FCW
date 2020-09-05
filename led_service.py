@@ -1,4 +1,5 @@
 import os
+import subprocess
 #
 # import board
 # import neopixel
@@ -20,7 +21,8 @@ def update_led(red, green, blue):
 
 def start_visualization():
     # os.popen('sudo nohup python3 /var/www/html/fcw/led_watchdog.py >> /dev/null 2>&1 &')
-    os.popen('sh /var/www/html/fcw/script.sh')
+    # os.popen('sh /var/www/html/fcw/script.sh')
+    subprocess.Popen(["sudo", "python3", "/var/www/html/fcw/led_watchdog.py"])
 
 
 def stop_visualization():
@@ -29,7 +31,7 @@ def stop_visualization():
 
 def check_visualization_status():
     resp = os.popen('ps aux | grep led_watchdog.py')
-    if "sudo nohup python3 /var/www/html/fcw/led_watchdog.py" in resp.read():
+    if "sudo python3 /var/www/html/fcw/led_watchdog.py" in resp.read():
         return True
     else:
         return False
