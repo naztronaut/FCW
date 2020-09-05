@@ -24,4 +24,7 @@ def start_visualization():
 
 def check_visualization_status():
     resp = os.popen('ps aux | grep led_watchdog.py')
-    return resp.read()
+    if "sudo python3 led_watchdog.py" in resp.read():
+        return True
+    else:
+        return False
