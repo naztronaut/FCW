@@ -19,7 +19,8 @@ def update_led(red, green, blue):
 
 
 def start_visualization():
-    os.popen('sudo nohup python3 /var/www/html/fcw/led_watchdog.py >> /dev/null 2>&1 &')
+    # os.popen('sudo nohup python3 /var/www/html/fcw/led_watchdog.py >> /dev/null 2>&1 &')
+    os.popen('sh /var/www/html/fcw/script.sh')
 
 
 def stop_visualization():
