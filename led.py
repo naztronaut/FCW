@@ -10,7 +10,7 @@ def led():
     red = request.args.get('red')
     green = request.args.get('green')
     blue = request.args.get('blue')
-    if ls.check_visualization_status() is True:
+    if ls.check_visualization_status() is False:
         ls.start_visualization()
     if red == '0' and green == '0' and blue == '0':
         ls.stop_visualization()
