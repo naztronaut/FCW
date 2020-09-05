@@ -22,6 +22,10 @@ def start_visualization():
     os.popen('sudo nohup sudo python3 p7.py >> /dev/null 2>&1 &')
 
 
+def stop_visualization():
+    os.popen('sudo pkill -f led_watchdog.py')
+
+
 def check_visualization_status():
     resp = os.popen('ps aux | grep led_watchdog.py')
     if "sudo python3 led_watchdog.py" in resp.read():

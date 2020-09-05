@@ -10,7 +10,10 @@ def led():
     red = request.args.get('red')
     green = request.args.get('green')
     blue = request.args.get('blue')
-    print(red, green, blue)
+    if ls.check_visualization_status() is True:
+        ls.start_visualization()
+    if red == '0' and green == '0' and blue == '0':
+        ls.stop_visualization()
     resp = ls.update_led(red, green, blue)
     return jsonify({"message": resp})
 
@@ -18,3 +21,4 @@ def led():
 @app.route('/check_vis_status', methods=['GET'])
 def check_vis_status():
     return jsonify({"message": ls.check_visualization_status()})
+
