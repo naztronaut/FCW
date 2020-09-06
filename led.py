@@ -4,7 +4,7 @@ import led_service as ls
 app = Flask(__name__)
 
 
-@app.route('/led', methods=['GET'])
+@app.route('/', methods=['GET'])
 def ui():
     return current_app.send_static_file('index.html')
 
