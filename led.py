@@ -1,20 +1,22 @@
-from flask import Flask, request, jsonify
+from flask import Flask, request, jsonify, current_app
 import led_service as ls
 
 app = Flask(__name__)
 
 
+@app.route('/led', methods=['GET'])
+def ui():
+    return current_app.send_static_file('index.html')
+
+
 # {{url}}/led?red=255&green=255&blue=255&position=1
-@app.route('/', methods=['GET'])
+@app.route('/led', methods=['GET'])
 def led():
     red = request.args.get('red')
     green = request.args.get('green')
     blue = request.args.get('blue')
-    if ls.check_visualization_status() is False:
-        ls.start_visualization()
+
     resp = ls.update_led(red, green, blue)
-    if red == '0' and green == '0' and blue == '0':
-        ls.stop_visualization()
     return jsonify({"message": resp})
 
 
