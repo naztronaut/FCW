@@ -10,10 +10,10 @@ import subprocess
 # pixels = neopixel.NeoPixel(board.D18, config.LED_COUNT)
 
 
-def update_led(red, green, blue):
+def update_led(mode, red, green, blue):
     # os.popen('sudo python3 ' + os.path.dirname(os.path.realpath(__file__)) + '/neopix.py  ' + red + ' ' + green + ' ' + blue)
     with open("/var/www/html/fcw/file/status.txt", "w") as f:
-        f.write(red + "," + green + "," + blue)
+        f.write(mode + "," + red + "," + green + "," + blue)
     # os.popen('sudo python3 ' + os.path.dirname(os.path.realpath(__file__)) + '/neopix.py  ' + red + ' ' + green + ' ' + blue)
     # for x in range(0, config.LED_COUNT):
     #     pixels[x] = (red, green, blue)
