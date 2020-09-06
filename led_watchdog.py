@@ -18,10 +18,10 @@ def color_wipe(strip, color, wait_ms=50):
         # with open("file/status.txt", "a") as f:
         #     f.write(str(color) + "\r\n")
         strip.show()
-        time.sleep(wait_ms / 1000.0)
+        time.sleep(wait_ms / 2000.0)
 
 
-def theaterChase(strip, color, wait_ms=50, iterations=10):
+def theaterChase(strip, color, wait_ms=50, iterations=30):
     """Movie theater light style chaser animation."""
     for j in range(iterations):
         for q in range(3):
@@ -53,7 +53,7 @@ class MyHandler(FileSystemEventHandler):
                     elif colors[0] == 'chase':
                         theaterChase(strip, Color(int(colors[1]), int(colors[2]), int(colors[3])))
                     elif colors[0] == 'smooth':
-                        color_wipe(strip, Color(int(colors[1]), int(colors[2]), int(colors[3])))
+                        smooth(strip, Color(int(colors[1]), int(colors[2]), int(colors[3])))
                     else:
                         color_wipe(strip, Color(int(colors[1]), int(colors[2]), int(colors[3])))
                 except:
