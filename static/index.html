@@ -1,1 +1,44 @@
-Hello World
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Easy Programming - Flask Controlled WS2812b LEDs</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <script src="includes/jquery.min.js"></script>
+        <link rel="stylesheet" href="includes/materialdesignicons.min.css">
+        <link rel="stylesheet" href="includes/bootstrap.min.css">
+        <script src="includes/bootstrap.min.js"></script>
+        <link rel="stylesheet" href="includes/classic.min.css"/>
+        <script src="includes/pickr.min.js"></script>
+        <link id="favicon" rel="icon" type="image/x-icon" href="favicon.ico">
+        <link href="includes/sourcecodepro.css" rel="stylesheet">
+        <link href="includes/obitron.css" rel="stylesheet">
+        <script src="script.js" type="module"></script>
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+        <nav class="navbar navbar-expand-sm bg-dark navbar-dark d-flex justify-content-between">
+          <div class="p-2"><a class="navbar-brand" href="#">Easy Programming </a></div> 
+            <div class="p-2"><span id="subtitle">Flask Controlled WS2812b</span></div>
+        </nav>
+        <div class="container">
+            <div class="" id="roomTabContent">
+
+                <!--HOME TAB START-->
+              <div class="  " id="home" role="tabpanel" aria-labelledby="home-tab">
+                  <div class="btn-group d-flex" role="group" aria-label="Light Modes">
+                      <button type="button" class="selectMode btn btn-info w-100" data-mode="chase">Chase</button>
+                      <button type="button" class="selectMode btn btn-secondary w-100" data-mode="smooth">Smooth</button>
+                      <button type="button" class="selectMode btn btn-secondary w-100" data-mode="wipe">Wipe</button>
+                    </div>
+                  <div class="row">
+                            <div class="col">
+                                <div class="color-picker"></div>
+                            </div>
+                    </div>
+
+                    <!--MODES END-->
+              </div>
+            </div>
+        </div>
+    </body>
+</html>

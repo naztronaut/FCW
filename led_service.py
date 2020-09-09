@@ -12,8 +12,12 @@ import subprocess
 
 def update_led(mode, red, green, blue):
     # os.popen('sudo python3 ' + os.path.dirname(os.path.realpath(__file__)) + '/neopix.py  ' + red + ' ' + green + ' ' + blue)
-    with open("/var/www/html/fcw/file/status.txt", "w") as f:
-        f.write(mode + "," + red + "," + green + "," + blue)
+    try:
+        with open("/var/www/html/fcw/file/status.txt", "w") as f:
+            f.write(mode + "," + red + "," + green + "," + blue)
+        return "success"
+    except:
+        return "failed"
     # os.popen('sudo python3 ' + os.path.dirname(os.path.realpath(__file__)) + '/neopix.py  ' + red + ' ' + green + ' ' + blue)
     # for x in range(0, config.LED_COUNT):
     #     pixels[x] = (red, green, blue)
