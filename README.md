@@ -7,7 +7,23 @@ Flask Controlled WS2812b LED Strip
 
 <a href="https://www.youtube.com/watch?v=Kf6seycN9yY" target="_blank"><img src="img/thumbnail.png" alt="AIIM Demo" width="700px" /></a>
 
+Once everything works, the current version's web UI will look like this:
+
+<img src="img/ui_demo.png" alt="FCW UI">
+
 ## Table of Contents
+
+1. [Getting Started](#getting-started)
+    1. [Hardware](#hardware)
+    2. [Install Git & Clone repo](#install-git--clone-repo)
+    3. [Install dependencies with `install.py`](#install-dependencies-with-installpy)
+    4. [Config.py](#configpy-has-been-edited-as-follows)
+2. [Install and Run Flask](#install-and-run-flask)
+3. [Run led_watchdog.py](#run-led_watchdogpy-in-the-background)
+4. [Authors](#authors)
+5. [License](#license)
+6. [Questions](#questions-)
+7. [Contribute](#contribute)
 
 ## Getting Started
 
