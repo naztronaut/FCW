@@ -135,7 +135,9 @@ If things go well, you should be able to access the app by going to http://ip_ad
 The way the lights work is a background watchdog process is run looking for updates to `file/status.txt` and then it parses that data to turn on the lights. 
 
 We need to do this so that the lights are continuously updating when new commands are sent instead of restarting. I'm still working on trying to figure out a way to run that script
-from the Flask app, still a bit behind, hopefully  I'll figure it out soon. If you have ideas, let me know! In the meantime, run the script in the background with this command:
+from the Flask app, still a bit behind, hopefully  I'll figure it out soon. If you have ideas, let me know! 
+
+In the meantime, run the script in the background with this command (activate your virtual environment if you are using it):
 
 ```shell
 sudo nohup python3 /var/www/html/fcw/led_watchdog.py >> /dev/null 2>&1 &
@@ -143,6 +145,11 @@ sudo nohup python3 /var/www/html/fcw/led_watchdog.py >> /dev/null 2>&1 &
 
 Now any updates sent from the UI will make the lights trigger. 
 
+To kill the script, run:
+
+```shell
+sudo pkill -f led_watchdog.py
+```
 
 
 ## Authors
