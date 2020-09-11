@@ -22,9 +22,9 @@ def color_wipe(strip, color, wait_ms=50):
 
 
 def scroll_out(strip, color, wait_ms=50):
-    for i in range(strip.numPixels()/2, 0):
+    for i in range(int(strip.numPixels()/2), -1, -1):
         strip.setPixelColor(i, color)
-        strip.setPixelColor((strip.numPixels() - i + 1), color)
+        strip.setPixelColor((strip.numPixels() - i - 1), color)
 
         # with open("file/status.txt", "a") as f:
         #     f.write(str(color) + "\r\n")
@@ -33,9 +33,9 @@ def scroll_out(strip, color, wait_ms=50):
 
 
 def scroll_in(strip, color, wait_ms=50):
-    for i in range(strip.numPixels()/2):
+    for i in range(int(strip.numPixels()/2)):
         strip.setPixelColor(i, color)
-        strip.setPixelColor((strip.numPixels() - i + 1), color)
+        strip.setPixelColor((strip.numPixels() - i - 1), color)
 
         # with open("file/status.txt", "a") as f:
         #     f.write(str(color) + "\r\n")
