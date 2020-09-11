@@ -21,6 +21,28 @@ def color_wipe(strip, color, wait_ms=50):
         time.sleep(wait_ms / 2000.0)
 
 
+def scroll_out(strip, color, wait_ms=50):
+    for i in range(strip.numPixels()/2, 0):
+        strip.setPixelColor(i, color)
+        strip.setPixelColor((strip.numPixels() - i + 1), color)
+
+        # with open("file/status.txt", "a") as f:
+        #     f.write(str(color) + "\r\n")
+        strip.show()
+        time.sleep(wait_ms / 2000.0)
+
+
+def scroll_in(strip, color, wait_ms=50):
+    for i in range(strip.numPixels()/2):
+        strip.setPixelColor(i, color)
+        strip.setPixelColor((strip.numPixels() - i + 1), color)
+
+        # with open("file/status.txt", "a") as f:
+        #     f.write(str(color) + "\r\n")
+        strip.show()
+        time.sleep(wait_ms / 2000.0)
+
+
 def theaterChase(strip, color, wait_ms=50, iterations=30):
     """Movie theater light style chaser animation."""
     for j in range(iterations):
@@ -54,6 +76,10 @@ class MyHandler(FileSystemEventHandler):
                         theaterChase(strip, Color(int(colors[1]), int(colors[2]), int(colors[3])))
                     elif colors[0] == 'smooth':
                         smooth(strip, Color(int(colors[1]), int(colors[2]), int(colors[3])))
+                    elif colors[0] == 'scroll_in':
+                        scroll_in(strip, Color(int(colors[1]), int(colors[2]), int(colors[3])))
+                    elif colors[0] == 'scroll_out':
+                        scroll_out(strip, Color(int(colors[1]), int(colors[2]), int(colors[3])))
                     else:
                         color_wipe(strip, Color(int(colors[1]), int(colors[2]), int(colors[3])))
                 except:
