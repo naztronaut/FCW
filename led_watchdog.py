@@ -76,9 +76,9 @@ class MyHandler(FileSystemEventHandler):
                         theaterChase(strip, Color(int(colors[1]), int(colors[2]), int(colors[3])))
                     elif colors[0] == 'smooth':
                         smooth(strip, Color(int(colors[1]), int(colors[2]), int(colors[3])))
-                    elif colors[0] == 'scroll_in':
+                    elif colors[0] == 'scrollin':
                         scroll_in(strip, Color(int(colors[1]), int(colors[2]), int(colors[3])))
-                    elif colors[0] == 'scroll_out':
+                    elif colors[0] == 'scrollout':
                         scroll_out(strip, Color(int(colors[1]), int(colors[2]), int(colors[3])))
                     else:
                         color_wipe(strip, Color(int(colors[1]), int(colors[2]), int(colors[3])))
