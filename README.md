@@ -9,7 +9,7 @@ Flask Controlled WS2812b LED Strip
 
 Once everything works, the current version's web UI will look like this:
 
-<img src="img/ui_demo.png" alt="FCW UI">
+<img src="img/ui_demo.png" alt="FCW UI" width="700px">
 
 ## Table of Contents
 
