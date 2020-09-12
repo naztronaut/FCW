@@ -5,7 +5,7 @@ Flask Controlled WS2812b LED Strip
 
 (Coming soon)
 
-<a href="https://www.youtube.com/watch?v=Kf6seycN9yY" target="_blank"><img src="img/thumbnail.png" alt="AIIM Demo" width="700px" /></a>
+<a href="https://www.youtube.com/watch?v=Kf6seycN9yY" target="_blank"><img src="img/FCW_thumbnail.jpg" alt="FCW Demo" width="700px" /></a>
 
 Once everything works, the current version's web UI will look like this:
 
