@@ -93,6 +93,7 @@ Here are some quick steps to take once you are inside your `fcw` folder:
 ```shell
 sudo python3 -m venv venv
 sudo chown -R pi:www-data venv
+. venv/bin/activate
 pip3 install flask
 cd venv/bin/
 wget https://raw.githubusercontent.com/naztronaut/RaspberryPi-RGBW-Control/master/utils/activate_this.py
