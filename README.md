@@ -124,7 +124,7 @@ Paste in the contents:
 Then disable the default config and add the new one and restart Apache:
 
 ```shell
-sudo a2ensite piapp.conf
+sudo a2ensite fcw.conf
 sudo a2dissite 000-default.conf
 sudo service apache2 restart
 ```
